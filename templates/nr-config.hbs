@@ -1,0 +1,11 @@
+<form autocomplete="off">
+    <div class="form-group">
+        <label>Named Resource</label>
+        <input type="checkbox" name="flags.{{moduleID}}.isNamedResource" {{checked isNamedResource}}/>
+    </div>
+    <div class="form-group">
+        <label>Resource Key (defaults to item name if blank)</label>
+        <input type="text" name="flags.{{moduleID}}.resourceKey" value="{{resourceKey}}" placeholder="{{item.name}}"/>
+    </div>
+    <button type="submit">Save</button>
+</form>

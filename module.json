@@ -1,6 +1,6 @@
 {
-    "id": "enso-combat-hud",
-    "title": "Enso's Combat HUD",
+    "id": "named-resources",
+    "title": "Named Resources",
     "authors": [
         {
             "name": "enso",
@@ -13,9 +13,9 @@
         "verified": "12"
     },
     "esmodules": [
-        "./scripts/enso-combat-hud.js"
+        "./scripts/named-resources.js"
     ],
     "styles": [
-        "./styles/enso-combat-hud.css"
+        "./styles/named-resources.css"
     ]
 }

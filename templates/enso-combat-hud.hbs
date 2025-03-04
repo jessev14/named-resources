@@ -1,0 +1,5 @@
+{{#each turns as |turn id|}}
+    <div class="{{#if turn.isTurn}}current-turn{{else}}turn{{/if}}">
+        <img class="combatant-img" src="{{turn.img}}" />
+    </div>
+{{/each}}

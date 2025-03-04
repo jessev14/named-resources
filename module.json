@@ -1,0 +1,21 @@
+{
+    "id": "enso-combat-hud",
+    "title": "Enso's Combat HUD",
+    "authors": [
+        {
+            "name": "enso",
+            "flags": {}
+        }
+    ],
+    "version": "1.0.0",
+    "compatibility": {
+        "minimum": "12",
+        "verified": "12"
+    },
+    "esmodules": [
+        "./scripts/enso-combat-hud.js"
+    ],
+    "styles": [
+        "./styles/enso-combat-hud.css"
+    ]
+}

@@ -30,12 +30,12 @@ Hooks.on('getItemSheet5e2HeaderButtons', (sheet, buttons) => {
 
 
 async function consume(wrapped, ...args) {
-    if (this.type === 'namedResource') this.target = this.actor.items.find(i => i.getFlag(moduleID, 'resourceKey') === this.target)?.id;
+    if (this.type === 'namedResource') this.target = this.actor.items.find(i => i.getFlag(moduleID, 'isNamedResource') && i.getFlag(moduleID, 'resourceKey') === this.target)?.id;
     return wrapped(...args);
 }
 
 function consumptionLabels(wrapped, ...args) {
-    if (this.type === 'namedResource') this.target = this.actor.items.find(i => i.getFlag(moduleID, 'resourceKey') === this.target)?.id;
+    if (this.type === 'namedResource') this.target = this.actor.items.find(i => i.getFlag(moduleID, 'isNamedResource') && i.getFlag(moduleID, 'resourceKey') === this.target)?.id;
     return wrapped(...args);
 }
 

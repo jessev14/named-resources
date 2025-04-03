@@ -15,5 +15,9 @@
     "esmodules": [
         "./scripts/named-resources.js"
     ],
-    "styles": []
+    "styles": [],
+    "url": "",
+    "manifest": "",
+    "download": "",
+  
 }

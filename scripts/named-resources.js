@@ -18,16 +18,18 @@ Hooks.once('init', () => {
 });
 
 
-Hooks.on('getItemSheet5e2HeaderButtons', (sheet, buttons) => {
-    const { item } = sheet;
-    buttons.unshift({
-        class: moduleID,
-        icon: 'fa-solid fa-star',
-        label: 'Configure Named Resource',
-        onclick: () => new nrConfig(item).render(true)
-    });
-});
+Hooks.on('renderItemSheetV2', (app, html) => {
+    const { item } = app;
+    if (html.querySelector('button.fa-star')) return;
 
+    const classesButton = document.createElement('button');
+    classesButton.type = 'button';
+    classesButton.dataset.tooltip = 'Set Feature Classes';
+    classesButton.classList.add('header-control', 'fa-solid', 'fa-star');
+    classesButton.addEventListener('click', () => new nrConfig(item).render(true));
+    const closeButton = html.querySelector('button[data-action="close"]');
+    closeButton.before(classesButton);
+});
 
 async function consume(wrapped, ...args) {
     if (this.type === 'namedResource') this.target = this.actor.items.find(i => i.getFlag(moduleID, 'isNamedResource') && i.getFlag(moduleID, 'resourceKey') === this.target)?.id;
